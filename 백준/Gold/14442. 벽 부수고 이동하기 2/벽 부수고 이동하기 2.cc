@@ -16,12 +16,16 @@ typedef struct _Pos
 int N, M, K;
 int MIN_ROUTE = 1000000000;
 int map[1003][1003] = { 0, };
-bool visit[1001][1001][10] = {false,};
+bool visit[1001][1001][10] = {false,}; //벽 부순 횟수대로 visit 배열 구분해야함
 int dir[4][2] = { {0,1},{0,-1},{1,0},{-1,0} };
 queue<Pos>q;
 
 int main()
 {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
 	cin >> N >> M >> K;
 
 	for (int i = 0; i < N; i++)
