@@ -65,11 +65,6 @@ bool test()
 
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-
-
 	int S, P;
 	int ans=0;
 
@@ -90,32 +85,32 @@ int main()
 	}
 
 
-	//int state = 0;
+	int state = 0;
 
 	if (test())
 	{
 		ans++;
-		//state =1;
+		state =1;
 	}
 		
 
 	for (; i < S; i++)
 	{
-		/*if (input[i] == input[i - P])
+		if (input[i] == input[i - P])
 		{
 			ans = ans + state;
 			continue;
-		}*/
+		}
 
 		add(input[i]);
 		sub(input[i - P]);
 		if (test())
 		{
 			ans++;
-			//state = 1;
+			state = 1;
 		}
-		//else
-			//state = 0;
+		else
+			state = 0;
 	}
 
 
