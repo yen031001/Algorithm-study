@@ -12,7 +12,7 @@ vector<pair<int, int>>Edge[20005];
 priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>q;
 int dist[20005];
 bool visit[20005];
-int v_count = 0;
+
 
 int main()
 {
@@ -39,7 +39,7 @@ int main()
 
 	q.push(pair<int, int>(0, start));
 	dist[start] = 0;
-	while (!q.empty()&&v_count<V)
+	while (!q.empty())
 	{
 		int cur = q.top().second;
 		int w = q.top().first;
@@ -48,7 +48,6 @@ int main()
 		if (w > dist[cur])
 			continue;
 
-		v_count++;
 		for (int i = 0; i < Edge[cur].size();i++)
 		{
 			int next_node = Edge[cur][i].first;
